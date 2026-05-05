@@ -1,105 +1,445 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amber's Barbershop</title>
+export default function AmbersBarbershop() {
+  const phoneNumber = "070329124472";
+  const phoneDisplay = "07032 9124472";
+  const bookingUrl = "https://www.planity.com/de-DE/ambers-barbershop-71083-herrenberg";
+  const routeUrl = "https://www.google.com/maps/place/Stuttgarter+Str.+2,+71083+Herrenberg/@48.5966094,8.8673766,17z/data=!3m1!4b1!4m6!3m5!1s0x479758e02e4fd57d:0xa73f89c682bb4139!8m2!3d48.5966059!4d8.8699515!16s%2Fg%2F11bw3_tzd3?entry=ttu&g_ep=EgoyMDI2MDQxOS4wIKXMDSoASAFQAw%3D%3D";
+  const websiteUrl = "https://ambers-barber.shop";
+  const instagramUrl = "https://www.instagram.com/ambersbarbershop/";
+  const services = [
+    {
+      title: "Gentlemen Cut",
+      price: "32 €",
+      items: ["Individuelle Schnittberatung", "Waschen", "Schneiden", "Föhnen", "Styling", "Heiße Kompresse"],
+    },
+    {
+      title: "Traditionelle Rasur",
+      price: "22 €",
+      items: ["Heiße Kompresse", "Individuelle Beratung", "Rasur mit Schaum", "Traditionelle Barber Technik"],
+    },
+    {
+      title: "Gentlemen Cut Amber's",
+      price: "54 €",
+      items: ["Gentlemen Cut komplett", "+ Traditionelle Rasur Barber Art"],
+    },
+    {
+      title: "Gentlemen Cut Master",
+      price: "64 €",
+      items: ["Gentlemen Cut Amber's", "+ Augenbrauen Haarentfernung", "Fadentechnik oder Heißwachs"],
+    },
+    {
+      title: "Gentlemen Cut Deluxe",
+      price: "78 €",
+      items: ["Gentlemen Cut Master", "+ Gesichtspflegemaske", "+ Kopfmassage"],
+    },
+  ];
 
-<style>
-body {
-  margin:0;
-  font-family:Arial;
-  background:#0b0b0b;
-  color:white;
+  const extraPrices = [
+    "Maschinenhaarschnitt – 17 €",
+    "Maschinenhaarschnitt Fade Cut – 22 €",
+    "Kinderhaarschnitt (bis 12 Jahre) – 21 €",
+    "Bart trimmen – ab 13 €",
+    "Kopfmassage – ab 9 €",
+    "Haarentfernung – 10 €",
+    "Gesichtspflege Maske – 8 €",
+    "Traditionelle Rasur – 22 €",
+    "Grauabdeckung – ab 10 €",
+    "Haare waschen – 6 €",
+  ];
+
+  const reviews = [
+    {
+      name: "Jan Kowalski",
+      text: "Mit Abstand der beste Friseur in der Stadt. Endlich ein Laden, der durchgehend sauber und stark schneidet.",
+    },
+    {
+      name: "Adrian B.",
+      text: "Online einen Termin erstellt und direkt dran gekommen. Selten war ich auf Anhieb so zufrieden.",
+    },
+    {
+      name: "Sven Hendrich",
+      text: "Super freundliche Mitarbeiter. Ich war sehr zufrieden mit der Arbeit und komme definitiv wieder.",
+    },
+  ];
+
+  const faq = [
+    {
+      q: "Kann ich online buchen?",
+      a: "Ja, Amber's Barbershop bietet eine Online-Buchung an. Alternativ kannst du auch direkt anrufen.",
+    },
+    {
+      q: "Welche Öffnungszeiten gelten?",
+      a: "Dienstag bis Freitag von 10:00 bis 19:00 Uhr, Samstag von 09:00 bis 15:00 Uhr. Montag und Sonntag geschlossen.",
+    },
+    {
+      q: "Welche Leistungen bietet ihr an?",
+      a: "Von Haarschnitten und Fade Cuts über Rasur, Bartpflege, Waxing bis hin zu Kopfmassage und Gesichtspflege.",
+    },
+  ];
+
+  const sectionStyle = { maxWidth: 1180, margin: "0 auto", padding: "64px 20px" };
+  const cardStyle = { background: "#121212", border: "1px solid #232323", borderRadius: 18 };
+  const muted = { color: "#cfcfcf" };
+  const gold = "#d4a017";
+  const primaryButton = {
+    background: gold,
+    color: "#111",
+    padding: "13px 20px",
+    borderRadius: 12,
+    fontWeight: 700,
+    textDecoration: "none",
+    display: "inline-block",
+  };
+  const secondaryButton = {
+    border: "1px solid #333",
+    color: "white",
+    padding: "13px 20px",
+    borderRadius: 12,
+    fontWeight: 700,
+    textDecoration: "none",
+    display: "inline-block",
+  };
+
+  return (
+    <>
+    <div style={{ fontFamily: "Arial, sans-serif", background: "#0b0b0b", color: "white", minHeight: "100vh", paddingBottom: 90 }}>
+      <a
+        href={bookingUrl}
+        target="_blank"
+        rel="noreferrer"
+        style={{
+          position: "fixed",
+          right: 20,
+          bottom: 20,
+          zIndex: 100,
+          background: gold,
+          color: "#111",
+          padding: "14px 18px",
+          borderRadius: 999,
+          fontWeight: 700,
+          textDecoration: "none",
+          boxShadow: "0 10px 30px rgba(0,0,0,0.35)",
+        }}
+      >
+        Termin buchen
+      </a>
+      <header
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 50,
+          background: "rgba(11,11,11,0.92)",
+          borderBottom: "1px solid #1f1f1f",
+          backdropFilter: "blur(8px)",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 1180,
+            margin: "0 auto",
+            padding: "16px 20px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 16,
+            flexWrap: "wrap",
+          }}
+        >
+          <div>
+            <div style={{ fontSize: 22, fontWeight: 700 }}>Amber&apos;s <span style={{ color: gold }}>Barbershop</span></div>
+            <div style={{ color: "#999", fontSize: 12 }}>Herrenberg</div>
+          </div>
+          <div style={{ display: "flex", gap: 16, flexWrap: "wrap", color: "#d0d0d0", fontSize: 14 }}>
+            <a href="#leistungen" style={{ color: "#d0d0d0", textDecoration: "none" }}>Leistungen</a>
+            <a href="#preise" style={{ color: "#d0d0d0", textDecoration: "none" }}>Preise</a>
+            <a href="#bewertungen" style={{ color: "#d0d0d0", textDecoration: "none" }}>Bewertungen</a>
+            <a href="#faq" style={{ color: "#d0d0d0", textDecoration: "none" }}>FAQ</a>
+            <a href="#kontakt" style={{ color: "#d0d0d0", textDecoration: "none" }}>Kontakt</a>
+          </div>
+          <a href={`tel:${phoneNumber}`} style={{ background: gold, color: "#111", padding: "12px 18px", borderRadius: 12, fontWeight: 700, textDecoration: "none" }}>
+            Jetzt anrufen
+          </a>
+        </div>
+      </header>
+
+      <section
+        style={{
+          background: "radial-gradient(circle at top, rgba(212,160,23,0.18), transparent 30%), linear-gradient(to bottom, #161616, #080808)",
+          borderBottom: "1px solid #1f1f1f",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 1180,
+            margin: "0 auto",
+            padding: "72px 20px",
+            display: "grid",
+            gridTemplateColumns: "1.15fr 0.85fr",
+            gap: 32,
+          }}
+        >
+          <div>
+            <div
+              style={{
+                display: "inline-block",
+                padding: "8px 14px",
+                borderRadius: 999,
+                background: "rgba(212,160,23,0.12)",
+                border: "1px solid rgba(212,160,23,0.35)",
+                color: "#eccb68",
+                fontSize: 14,
+                marginBottom: 18,
+              }}
+            >
+              4,9★ Google Bewertung · 475 Rezensionen · Herrenberg
+            </div>
+            <h1 style={{ fontSize: 58, lineHeight: 1.05, margin: "0 0 18px" }}>
+              Real Men Go To <span style={{ color: gold }}>Real Barbers</span>
+            </h1>
+            <p style={{ ...muted, fontSize: 19, maxWidth: 720 }}>
+              Premium Quality Service für Männer, die Wert auf Stil, Präzision und echte Barber-Kunst legen. Moderne Schnitte, traditionelle Rasur und ein Erlebnis, das über einen normalen Friseurbesuch hinausgeht.
+            </p>
+            <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginTop: 28 }}>
+              <a href={bookingUrl} target="_blank" rel="noreferrer" style={primaryButton}>
+                Jetzt Termin vereinbaren
+              </a>
+              <a href="#preise" style={secondaryButton}>
+                Preise ansehen
+              </a>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, marginTop: 28 }}>
+              {[
+                ["Google Bewertung", "4,9 / 5"],
+                ["Rezensionen", "475"],
+                ["Geöffnet", "10:00–19:00"],
+                ["Online buchen", "Möglich"],
+              ].map(([label, value]) => (
+                <div key={label} style={{ ...cardStyle, padding: 18 }}>
+                  <div style={{ color: "#9a9a9a", fontSize: 13, marginBottom: 8 }}>{label}</div>
+                  <div style={{ fontSize: 20, fontWeight: 700 }}>{value}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ ...cardStyle, padding: 22, background: "rgba(255,255,255,0.04)", borderRadius: 24 }}>
+            <div style={{ ...cardStyle, padding: 28, background: "linear-gradient(135deg, #1d1d1d, #0c0c0c)", borderColor: "rgba(212,160,23,0.22)" }}>
+              <div style={{ color: gold, textTransform: "uppercase", letterSpacing: "0.25em", fontSize: 12, marginBottom: 12 }}>Aus Tradition der Qualität verpflichtet</div>
+              <h2 style={{ fontSize: 34, margin: "0 0 12px" }}>
+                Traditionelle Barber Kunst trifft auf <span style={{ color: gold }}>modernen Zeitgeist</span>
+              </h2>
+              <p style={muted}>
+                Meisterlich ausgeführte Services für Männer mit Stil – mit Fokus auf Qualität, Atmosphäre und Ergebnisse, die man sofort sieht.
+              </p>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 10, marginTop: 20 }}>
+                {[
+                  "Gentlemen Cut",
+                  "Traditionelle Rasur",
+                  "Bartpflege",
+                  "Fadentechnik & Heißwachs",
+                ].map((item) => (
+                  <div key={item} style={{ background: "rgba(255,255,255,0.05)", borderRadius: 12, padding: 12, color: "#ddd", fontSize: 14 }}>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={sectionStyle}>
+        <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 24 }}>
+          <div>
+            <div style={{ color: gold, textTransform: "uppercase", letterSpacing: "0.2em", fontSize: 13, marginBottom: 10 }}>Philosophie</div>
+            <h2 style={{ fontSize: 40, margin: "0 0 12px" }}>Mehr als nur ein Friseurbesuch</h2>
+            <p style={{ ...muted, fontSize: 18 }}>
+              Unsere Philosophie ist es, alte und bewährte Handwerkskunst mit aktuellen Trends zu verbinden. Amber&apos;s Barbershop ist ein Ort, an dem Männer nicht nur einen perfekten Haarschnitt oder eine traditionelle Rasur bekommen, sondern auch für einen Moment dem hektischen Alltag entkommen können.
+            </p>
+            <p style={{ ...muted, fontSize: 18 }}>
+              Die entspannte Atmosphäre, gute Gespräche und ein hoher Qualitätsanspruch machen den Shop zu einer Topadresse für Männerpflege in Herrenberg.
+            </p>
+          </div>
+          <div style={{ ...cardStyle, padding: 26 }}>
+            <div style={{ color: gold, textTransform: "uppercase", letterSpacing: "0.2em", fontSize: 13, marginBottom: 14 }}>Warum Kunden wiederkommen</div>
+            {[
+              ["Spezialisierung", "Haar- und Gesichtspflege für Männer"],
+              ["Atmosphäre", "Premium Service & Lounge Area"],
+              ["Ruf", "4,9★ aus 475 Bewertungen"],
+              ["Standort", "Stuttgarter Straße 2, Herrenberg"],
+            ].map(([k, v], i) => (
+              <div key={k} style={{ display: "flex", justifyContent: "space-between", gap: 16, padding: "14px 0", borderBottom: i === 3 ? "none" : "1px solid #232323" }}>
+                <span style={{ color: "#d0d0d0" }}>{k}</span>
+                <strong style={{ color: "white", textAlign: "right" }}>{v}</strong>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="leistungen" style={{ ...sectionStyle, background: "#0f0f0f", borderTop: "1px solid #1f1f1f", borderBottom: "1px solid #1f1f1f" }}>
+        <div style={{ maxWidth: 760, marginBottom: 30 }}>
+          <div style={{ color: gold, textTransform: "uppercase", letterSpacing: "0.2em", fontSize: 13, marginBottom: 10 }}>Unser Service</div>
+          <h2 style={{ fontSize: 40, margin: "0 0 12px" }}>Premium Männerpflege mit sichtbarem Ergebnis</h2>
+          <p style={muted}>
+            Als Barbershop liegt unser Fokus auf traditionellen Barber-Techniken, kombiniert mit modernen Friseur- und Schneidemethoden. Alles mit einem klaren Ziel: äußerste Qualität und beste Ergebnisse.
+          </p>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 18 }}>
+          {[
+            ["Men Only", "Spezialisiert auf Haar und Gesichtspflege für Männer mit Stil und Anspruch."],
+            ["Perfekter Style", "Typgerechte und individuelle Schnitte, akkurat und präzise umgesetzt."],
+            ["Traditionelle Rasur", "Heiße Kompresse, klassische Technik und sauberes Finish."],
+            ["Lounge Area", "Entspannte Atmosphäre, gute Gespräche und ein Premium-Erlebnis."],
+          ].map(([title, text]) => (
+            <div key={title} style={{ ...cardStyle, padding: 22 }}>
+              <h3 style={{ marginTop: 0, marginBottom: 10, fontSize: 22 }}>{title}</h3>
+              <p style={{ ...muted, margin: 0 }}>{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="preise" style={sectionStyle}>
+        <div style={{ maxWidth: 760, marginBottom: 30 }}>
+          <div style={{ color: gold, textTransform: "uppercase", letterSpacing: "0.2em", fontSize: 13, marginBottom: 10 }}>Preise & Pakete</div>
+          <h2 style={{ fontSize: 40, margin: "0 0 12px" }}>Klare Preise für starke Ergebnisse</h2>
+          <p style={muted}>Von klassischem Haarschnitt bis Deluxe-Behandlung – hier findet jeder den passenden Service.</p>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 16, overflowX: "auto" }}>
+          {services.map((service, idx) => (
+            <div
+              key={service.title}
+              style={{
+                ...cardStyle,
+                padding: 24,
+                minWidth: 220,
+                position: "relative",
+                borderColor: idx === 2 ? "rgba(212,160,23,0.45)" : "#232323",
+                boxShadow: idx === 2 ? "0 0 0 1px rgba(212,160,23,0.14) inset" : "none",
+              }}
+            >
+              {idx === 2 && (
+                <div style={{ position: "absolute", top: 14, right: 14, background: "rgba(212,160,23,0.12)", color: "#eccb68", border: "1px solid rgba(212,160,23,0.35)", borderRadius: 999, padding: "5px 10px", fontSize: 12 }}>
+                  Beliebt
+                </div>
+              )}
+              <h3 style={{ marginTop: 0, marginBottom: 8, fontSize: 22 }}>{service.title}</h3>
+              <div style={{ fontSize: 34, fontWeight: 700, color: gold, marginBottom: 12 }}>{service.price}</div>
+              <ul style={{ paddingLeft: 18, color: "#d0d0d0", minHeight: 140 }}>
+                {service.items.map((item) => (
+                  <li key={item} style={{ marginBottom: 8 }}>{item}</li>
+                ))}
+              </ul>
+              <a href={bookingUrl} target="_blank" rel="noreferrer" style={{ ...primaryButton, padding: "12px 18px" }}>
+                Termin vereinbaren
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ ...cardStyle, padding: 24, marginTop: 24 }}>
+          <h3 style={{ marginTop: 0, fontSize: 24 }}>Weitere Preise</h3>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 10, color: "#d0d0d0" }}>
+            {extraPrices.map((item) => (
+              <div key={item} style={{ padding: "8px 0", borderBottom: "1px solid #1f1f1f" }}>{item}</div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div style={{ background: gold, color: "#111", textAlign: "center", padding: "18px 20px", fontWeight: 700 }}>
+        <a href={bookingUrl} target="_blank" rel="noreferrer" style={{ color: "#111", textDecoration: "none" }}>
+          Online buchen
+        </a>
+        {" "}oder direkt anrufen: {phoneDisplay}
+      </div>
+
+      <section id="bewertungen" style={{ ...sectionStyle, background: "#0f0f0f", borderTop: "1px solid #1f1f1f", borderBottom: "1px solid #1f1f1f" }}>
+        <div style={{ maxWidth: 760, marginBottom: 30 }}>
+          <div style={{ color: gold, textTransform: "uppercase", letterSpacing: "0.2em", fontSize: 13, marginBottom: 10 }}>Bewertungen</div>
+          <h2 style={{ fontSize: 40, margin: "0 0 12px" }}>Ein Ruf, der für sich selbst spricht</h2>
+          <p style={muted}>Top bewertet in Herrenberg – Kunden loben besonders die Qualität der Schnitte, die Freundlichkeit des Teams und die professionelle Atmosphäre.</p>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
+          {reviews.map((review) => (
+            <div key={review.name} style={{ ...cardStyle, padding: 22 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", gap: 16, marginBottom: 12 }}>
+                <strong>{review.name}</strong>
+                <span style={{ color: "#eccb68", fontWeight: 700 }}>5/5</span>
+              </div>
+              <p style={{ ...muted, margin: 0 }}>&ldquo;{review.text}&rdquo;</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="faq" style={sectionStyle}>
+        <div style={{ maxWidth: 760, marginBottom: 30 }}>
+          <div style={{ color: gold, textTransform: "uppercase", letterSpacing: "0.2em", fontSize: 13, marginBottom: 10 }}>FAQ</div>
+          <h2 style={{ fontSize: 40, margin: "0 0 12px" }}>Häufige Fragen</h2>
+        </div>
+        <div style={{ display: "grid", gap: 14 }}>
+          {faq.map((item) => (
+            <div key={item.q} style={{ ...cardStyle, padding: 22 }}>
+              <h3 style={{ margin: "0 0 8px", fontSize: 20 }}>{item.q}</h3>
+              <p style={{ ...muted, margin: 0 }}>{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="kontakt" style={sectionStyle}>
+        <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 24, padding: 30, background: "rgba(255,255,255,0.04)", borderRadius: 28, border: "1px solid #232323" }}>
+          <div>
+            <div style={{ color: gold, textTransform: "uppercase", letterSpacing: "0.2em", fontSize: 13, marginBottom: 10 }}>Kontakt</div>
+            <h2 style={{ fontSize: 40, margin: "0 0 12px" }}>Bereit für deinen nächsten perfekten Schnitt?</h2>
+            <p style={{ ...muted, fontSize: 18 }}>
+              Ruf jetzt an, buche online oder komm direkt vorbei. Amber&apos;s Barbershop steht für Qualität, Stil und ein Erlebnis, das über einen normalen Friseurbesuch hinausgeht.
+            </p>
+            <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginTop: 28 }}>
+              <a href={`tel:${phoneNumber}`} style={primaryButton}>
+                Jetzt anrufen
+              </a>
+              <a href={routeUrl} target="_blank" rel="noreferrer" style={secondaryButton}>
+                Route öffnen
+              </a>
+              <a href={bookingUrl} target="_blank" rel="noreferrer" style={secondaryButton}>
+                Online buchen
+              </a>
+            </div>
+          </div>
+          <div>
+            <div style={{ ...cardStyle, padding: 22, marginBottom: 14 }}>
+              <div style={{ color: "#9a9a9a", fontSize: 13 }}>Adresse</div>
+              <div style={{ marginTop: 6 }}>Stuttgarter Straße 2<br />71083 Herrenberg</div>
+            </div>
+            <div style={{ ...cardStyle, padding: 22, marginBottom: 14 }}>
+              <div style={{ color: "#9a9a9a", fontSize: 13 }}>Telefon</div>
+              <div style={{ marginTop: 6 }}>
+                <a href={`tel:${phoneNumber}`} style={{ color: "white", textDecoration: "none" }}>{phoneDisplay}</a>
+              </div>
+            </div>
+            <div style={{ ...cardStyle, padding: 22, marginBottom: 14 }}>
+              <div style={{ color: "#9a9a9a", fontSize: 13 }}>Öffnungszeiten</div>
+              <div style={{ marginTop: 6 }}>Dienstag–Freitag: 10:00–19:00<br />Samstag: 09:00–15:00</div>
+            </div>
+            <div style={{ ...cardStyle, padding: 22 }}>
+              <div style={{ color: "#9a9a9a", fontSize: 13 }}>Weitere Links</div>
+              <div style={{ marginTop: 10, display: "flex", flexDirection: "column", gap: 10 }}>
+                <a href={websiteUrl} target="_blank" rel="noreferrer" style={{ color: "white", textDecoration: "none" }}>Webseite öffnen</a>
+                <a href={instagramUrl} target="_blank" rel="noreferrer" style={{ color: "white", textDecoration: "none" }}>Instagram öffnen</a>
+                <a href={bookingUrl} target="_blank" rel="noreferrer" style={{ color: "white", textDecoration: "none" }}>Planity Buchung öffnen</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer style={{ borderTop: "1px solid #1f1f1f", padding: "26px 20px", color: "#999", textAlign: "center" }}>
+        © 2026 Amber&apos;s Barbershop · Stuttgarter Straße 2 · 71083 Herrenberg
+      </footer>
+    </div>
+    </>
+  );
 }
 
-header {
-  display:flex;
-  justify-content:space-between;
-  padding:20px;
-  border-bottom:1px solid #222;
-}
-
-a { color:white; text-decoration:none; }
-
-.btn {
-  background:#d4a017;
-  color:#111;
-  padding:12px 18px;
-  border-radius:10px;
-  font-weight:bold;
-}
-
-.hero {
-  padding:80px 20px;
-  text-align:center;
-}
-
-h1 { font-size:48px; }
-
-.section {
-  padding:60px 20px;
-  max-width:1000px;
-  margin:auto;
-}
-
-.card {
-  background:#121212;
-  padding:20px;
-  border-radius:15px;
-  margin:10px 0;
-  border:1px solid #222;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<div><b>Amber's Barbershop</b></div>
-<a class="btn" href="tel:070329124472">Anrufen</a>
-</header>
-
-<div class="hero">
-<h1>Real Men Go To Real Barbers</h1>
-<p>Premium Barber Service in Herrenberg</p>
-
-<br>
-
-<a class="btn" target="_blank"
-href="https://www.planity.com/de-DE/ambers-barbershop-71083-herrenberg">
-Termin buchen
-</a>
-
-</div>
-
-<div class="section">
-
-<h2>Leistungen</h2>
-
-<div class="card">Gentlemen Cut – 32€</div>
-<div class="card">Rasur – 22€</div>
-<div class="card">Deluxe Paket – 78€</div>
-
-</div>
-
-<div class="section">
-
-<h2>Kontakt</h2>
-
-<div class="card">
-Stuttgarter Straße 2<br>
-71083 Herrenberg
-</div>
-
-<br>
-
-<a class="btn" target="_blank"
-href="https://www.google.com/maps/place/Stuttgarter+Str.+2,+71083+Herrenberg">
-Route öffnen
-</a>
-
-</div>
-
-</body>
-</html>
